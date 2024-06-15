@@ -18,14 +18,14 @@ class BN_Noon_Elite_Price_By_Quantity_For_Woocommerce_Plugin
     {
         $screen = get_current_screen();
         if ($screen->id === 'product') {
-            wp_enqueue_script('bn_swo_qp_admin_script', plugin_dir_url(__FILE__) . 'admin-script.js', array('jquery'), '1.11', true);
+            wp_enqueue_script('bn_swo_qp_admin_script', plugin_dir_url(__FILE__) . 'dist/admin.min.js', array('jquery'), '1.01', true);
         }
     }
 
     public function enqueue_public_scripts()
     {
         if (is_product()) {
-            wp_enqueue_script('bn_swo_qp_public_script', plugin_dir_url(__FILE__) . 'public-script.js', array('jquery'), '1.0', true);
+            wp_enqueue_script('bn_swo_qp_public_script', plugin_dir_url(__FILE__) . 'dist/frontend.min.js', array('jquery'), '1.01', true);
         }
     }
 

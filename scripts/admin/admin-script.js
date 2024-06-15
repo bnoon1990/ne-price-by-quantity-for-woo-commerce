@@ -1,17 +1,17 @@
 jQuery(document).ready(function ($) {
   function bn_swo_qp_refresh_row_indices() {
-    $('#bn_swo_qp_pricing_table tbody tr').each(function (index, element) {
+    $("#bn_swo_qp_pricing_table tbody tr").each(function (index, element) {
       $(element)
-        .find('input, select')
+        .find("input, select")
         .each(function () {
-          const name = $(this).attr('name');
-          const newName = name.replace(/\[\d+\]/, '[' + index + ']');
-          $(this).attr('name', newName);
+          const name = $(this).attr("name");
+          const newName = name.replace(/\[\d+\]/, "[" + index + "]");
+          $(this).attr("name", newName);
         });
     });
   }
 
-  $('#bn_swo_qp_pricing_table').on('click', '.add_row', function () {
+  $("#bn_swo_qp_pricing_table").on("click", ".add_row", function () {
     const row = `
           <tr>
               <td><input type="number" name="bn_swo_qp_pricing_rules[0][quantity]" /></td>
@@ -25,12 +25,12 @@ jQuery(document).ready(function ($) {
               <td><button type="button" class="button remove_row">Remove</button></td>
           </tr>
       `;
-    $('#bn_swo_qp_pricing_table tbody').append(row);
+    $("#bn_swo_qp_pricing_table tbody").append(row);
     bn_swo_qp_refresh_row_indices();
   });
 
-  $('#bn_swo_qp_pricing_table').on('click', '.remove_row', function () {
-    $(this).closest('tr').remove();
+  $("#bn_swo_qp_pricing_table").on("click", ".remove_row", function () {
+    $(this).closest("tr").remove();
     bn_swo_qp_refresh_row_indices();
   });
 });
