@@ -5,7 +5,7 @@ const concat = require("gulp-concat");
 gulp.task("minify-css-admin", function () {
   return gulp
     .src("styles/admin/**/*.css")
-    .pipe(concat("admin.css"))
+    .pipe(concat("admin.min.css"))
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(gulp.dest("dist"));
 });
@@ -13,7 +13,7 @@ gulp.task("minify-css-admin", function () {
 gulp.task("minify-css-frontend", function () {
   return gulp
     .src("styles/frontend/**/*.css")
-    .pipe(concat("frontend.css"))
+    .pipe(concat("frontend.min.css"))
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(gulp.dest("dist"));
 });
