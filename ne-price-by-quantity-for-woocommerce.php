@@ -5,6 +5,8 @@
  * Description: Adds variable pricing by quantity with options for percentage or fixed amount discounts and displays a pricing table on the product page.
  * Version: 1.0
  * Author: Ben Noon
+ * License: GPL2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 // Prevent direct access to the file
@@ -30,6 +32,25 @@ function bn_swo_qp_enqueue_public_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'bn_swo_qp_enqueue_public_scripts');
+
+// Enqueue admin styles
+function bn_swo_qp_enqueue_admin_styles($hook)
+{
+    $screen = get_current_screen();
+    if ($screen->id === 'product') {
+        wp_enqueue_style('bn_swo_qp_admin_style', plugin_dir_url(__FILE__) . 'admin-style.min.css', array(), '1.0');
+    }
+}
+add_action('admin_enqueue_scripts', 'bn_swo_qp_enqueue_admin_styles');
+
+// Enqueue public styles
+function bn_swo_qp_enqueue_public_styles()
+{
+    if (is_product()) {
+        wp_enqueue_style('bn_swo_qp_public_style', plugin_dir_url(__FILE__) . 'public-style.min.css', array(), '1.0');
+    }
+}
+add_action('wp_enqueue_scripts', 'bn_swo_qp_enqueue_public_styles');
 
 require_once plugin_dir_path(__FILE__) . 'includes/admin-settings.php';
 require_once plugin_dir_path(__FILE__) . 'includes/product-pricing.php';

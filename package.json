@@ -1,0 +1,31 @@
+{
+  "name": "ne-price-by-quantity-for-woo-commerce",
+  "version": "1.0.0",
+  "description": "Adds variable pricing by quantity with options for percentage or fixed amount discounts and displays a pricing table on the product page.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnoon1990/ne-price-by-quantity-for-woo-commerce.git"
+  },
+  "keywords": [
+    "wordpress",
+    "woocommerce",
+    "plugin",
+    "pricing",
+    "products"
+  ],
+  "author": "Ben Noon",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/bnoon1990/ne-price-by-quantity-for-woo-commerce/issues"
+  },
+  "homepage": "https://github.com/bnoon1990/ne-price-by-quantity-for-woo-commerce#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1"
+  }
+}
