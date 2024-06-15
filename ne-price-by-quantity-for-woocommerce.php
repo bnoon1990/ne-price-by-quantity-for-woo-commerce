@@ -38,7 +38,7 @@ function bn_swo_qp_enqueue_admin_styles($hook)
 {
     $screen = get_current_screen();
     if ($screen->id === 'product') {
-        wp_enqueue_style('bn_swo_qp_admin_style', plugin_dir_url(__FILE__) . 'admin.min.css', array(), '1.0');
+        wp_enqueue_style('bn_swo_qp_admin_style', plugin_dir_url(__FILE__) . '/dist/admin.min.css', array(), '1.0');
     }
 }
 add_action('admin_enqueue_scripts', 'bn_swo_qp_enqueue_admin_styles');
@@ -47,7 +47,7 @@ add_action('admin_enqueue_scripts', 'bn_swo_qp_enqueue_admin_styles');
 function bn_swo_qp_enqueue_public_styles()
 {
     if (is_product()) {
-        wp_enqueue_style('bn_swo_qp_public_style', plugin_dir_url(__FILE__) . 'frontend.min.css', array(), '1.0');
+        wp_enqueue_style('bn_swo_qp_public_style', plugin_dir_url(__FILE__) . '/dist/frontend.min.css', array(), '1.0');
     }
 }
 add_action('wp_enqueue_scripts', 'bn_swo_qp_enqueue_public_styles');
