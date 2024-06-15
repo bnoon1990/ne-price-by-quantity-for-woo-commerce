@@ -52,6 +52,6 @@ function bn_swo_qp_enqueue_public_styles()
 }
 add_action('wp_enqueue_scripts', 'bn_swo_qp_enqueue_public_styles');
 
-require_once plugin_dir_path(__FILE__) . 'admin/admin-settings.php';
-require_once plugin_dir_path(__FILE__) . 'includes/product-pricing.php';
-require_once plugin_dir_path(__FILE__) . 'frontend/pricing-table.php';
+require_once plugin_dir_path(__FILE__) . 'admin/admin_settings.php';
+require_once plugin_dir_path(__FILE__) . 'includes/product_pricing.php';
+require_once plugin_dir_path(__FILE__) . 'frontend/pricing_table.php';
