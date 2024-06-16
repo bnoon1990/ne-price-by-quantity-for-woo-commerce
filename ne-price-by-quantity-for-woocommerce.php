@@ -9,6 +9,7 @@ class BN_Noon_Elite_Price_By_Quantity_For_Woocommerce_Plugin
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_styles'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_public_styles'));
 
+        require_once plugin_dir_path(__FILE__) . 'admin/plugin_settings.php';
         require_once plugin_dir_path(__FILE__) . 'admin/product_page_settings.php';
         require_once plugin_dir_path(__FILE__) . 'includes/product_pricing.php';
         require_once plugin_dir_path(__FILE__) . 'frontend/pricing_table.php';

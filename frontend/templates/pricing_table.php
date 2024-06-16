@@ -1,4 +1,12 @@
-<h2 style="font-size:1.5rem">Multibuy Discounts Available</h2>
+<?php
+$display_title = get_option('ne_quantity_pricing_display_title', 'no');
+$title = get_option('ne_quantity_pricing_title', __('Multibuy Discounts Available', 'ne_quantity_pricing'));
+?>
+
+<?php if ($display_title === 'yes') : ?>
+    <h2 style="font-size:1.5rem"><?php echo esc_html($title); ?></h2>
+<?php endif; ?>
+
 <table class="bn-swo-qp-pricing-table">
     <tr>
         <th>Quantity</th>
