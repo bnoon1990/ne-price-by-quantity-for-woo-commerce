@@ -28,15 +28,15 @@ class BN_Noon_Elite_Quantity_Pricing_Settings
     {
         return array(
             'section_title' => array(
-                'name'     => __('Section Title', 'ne_quantity_pricing'),
+                'name'     => __('Product page display settings', 'ne_quantity_pricing'),
                 'type'     => 'title',
                 'desc'     => '',
                 'id'       => 'ne_quantity_pricing_section_title'
             ),
             'display_title' => array(
-                'name' => __('Display Title', 'ne_quantity_pricing'),
+                'name' => __('Show table heading', 'ne_quantity_pricing'),
                 'type' => 'checkbox',
-                'desc' => __('Check this box to display the title on the product page', 'ne_quantity_pricing'),
+                'desc' => __('Check this box to display the heading above the quantity pricing table', 'ne_quantity_pricing'),
                 'id'   => 'ne_quantity_pricing_display_title',
                 'default' => 'yes',
             ),
