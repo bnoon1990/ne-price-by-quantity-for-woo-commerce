@@ -1,6 +1,8 @@
 <?php
 
-class BN_Noon_Elite_Quantity_Pricing_Pricing_Table
+namespace Noonelite\NePriceByQuantityForWoocommerce\Frontend;
+
+class PricingTable
 {
     public function __construct()
     {
@@ -25,5 +27,3 @@ class BN_Noon_Elite_Quantity_Pricing_Pricing_Table
         include plugin_dir_path(__FILE__) . 'templates/pricing_table.php';
     }
 }
-
-new BN_Noon_Elite_Quantity_Pricing_Pricing_Table();

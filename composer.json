@@ -1,19 +1,21 @@
 {
-    "name": "noonelite/ne-price-by-quantity-for-woocommerce",
-    "description": "Adds variable pricing by quantity with options for percentage or fixed amount discounts and displays a pricing table on the product page.",
-    "type": "wordpress-plugin",
-    "license": "GPL-2.0-or-later",
-    "autoload": {
-        "psr-4": {
-            "Noonelite\\NePriceByQuantityForWoocommerce\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Ben Noon",
-            "email": "Ben@Nooneliterecruitment.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {}
+  "name": "noonelite/ne-price-by-quantity-for-woocommerce",
+  "description": "Adds variable pricing by quantity with options for percentage or fixed amount discounts and displays a pricing table on the product page.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "Noonelite\\NePriceByQuantityForWoocommerce\\Admin\\": "admin/",
+      "Noonelite\\NePriceByQuantityForWoocommerce\\Frontend\\": "frontend/",
+      "Noonelite\\NePriceByQuantityForWoocommerce\\Includes\\": "includes/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ben Noon",
+      "email": "Ben@Nooneliterecruitment.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {}
 }

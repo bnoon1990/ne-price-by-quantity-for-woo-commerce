@@ -1,5 +1,8 @@
 <?php
-class BN_Noon_Elite_Quantity_Pricing_Settings
+
+namespace Noonelite\NePriceByQuantityForWoocommerce\Admin;
+
+class PluginSettings
 {
     public function __construct()
     {
@@ -77,5 +80,3 @@ class BN_Noon_Elite_Quantity_Pricing_Settings
         );
     }
 }
-
-new BN_Noon_Elite_Quantity_Pricing_Settings();

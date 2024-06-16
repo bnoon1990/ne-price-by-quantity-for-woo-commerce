@@ -10,8 +10,20 @@
  * Requires Plugins: WooCommerce
  */
 
+require __DIR__ . '/vendor/autoload.php';
+
+use Noonelite\NePriceByQuantityForWoocommerce\Admin\ProductPageSettings;
+use Noonelite\NePriceByQuantityForWoocommerce\Admin\PluginSettings;
+use Noonelite\NePriceByQuantityForWoocommerce\Frontend\PricingTable;
+use Noonelite\NePriceByQuantityForWoocommerce\Includes\ProductPricing;
+
 class BN_Noon_Elite_Price_By_Quantity_For_Woocommerce_Plugin
 {
+    private $productPageSettings;
+    private $pluginSettings;
+    private $pricingTable;
+    private $productPricing;
+
     public function __construct()
     {
         add_action('plugins_loaded', array($this, 'init'));
@@ -25,15 +37,15 @@ class BN_Noon_Elite_Price_By_Quantity_For_Woocommerce_Plugin
             return;
         }
 
+        $this->productPageSettings = new ProductPageSettings();
+        $this->pluginSettings = new PluginSettings();
+        $this->pricingTable = new PricingTable();
+        $this->productPricing = new ProductPricing();
+
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_public_scripts'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_styles'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_public_styles'));
-
-        require_once plugin_dir_path(__FILE__) . 'admin/plugin_settings.php';
-        require_once plugin_dir_path(__FILE__) . 'admin/product_page_settings.php';
-        require_once plugin_dir_path(__FILE__) . 'includes/product_pricing.php';
-        require_once plugin_dir_path(__FILE__) . 'frontend/pricing_table.php';
     }
 
     public function woocommerce_not_active_notice()
