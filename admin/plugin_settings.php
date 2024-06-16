@@ -1,25 +1,25 @@
 <?php
 class BN_Noon_Elite_Quantity_Pricing_Settings
 {
-    public function __construct()
+    protected function __construct()
     {
         add_filter('woocommerce_settings_tabs_array', array($this, 'add_settings_tab'), 50);
         add_action('woocommerce_settings_tabs_ne_quantity_pricing', array($this, 'add_settings_fields'));
         add_action('woocommerce_update_options_ne_quantity_pricing', array($this, 'update_settings_fields'));
     }
 
-    public function add_settings_tab($settings_tabs)
+    protected function add_settings_tab($settings_tabs)
     {
         $settings_tabs['ne_quantity_pricing'] = __('Quantity Pricing', 'ne_quantity_pricing');
         return $settings_tabs;
     }
 
-    public function add_settings_fields()
+    protected function add_settings_fields()
     {
         woocommerce_admin_fields($this->get_settings_fields());
     }
 
-    public function update_settings_fields()
+    protected function update_settings_fields()
     {
         woocommerce_update_options($this->get_settings_fields());
     }
