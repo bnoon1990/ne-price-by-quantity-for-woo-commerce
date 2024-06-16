@@ -4,9 +4,10 @@
  * Plugin Name: Price by quantity for WooCommerce - By Noon Elite
  * Description: Adds variable pricing by quantity with options for percentage or fixed amount discounts and displays a pricing table on the product page.
  * Version: 1.0
- * Author: Ben Noon
+ * Author: Ben Noon ( Noon Elite )
  * License: GPL2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires Plugins: WooCommerce
  */
 
 class BN_Noon_Elite_Price_By_Quantity_For_Woocommerce_Plugin
