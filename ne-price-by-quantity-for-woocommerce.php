@@ -13,6 +13,17 @@ class BN_Noon_Elite_Price_By_Quantity_For_Woocommerce_Plugin
 {
     public function __construct()
     {
+        add_action('plugins_loaded', array($this, 'init'));
+    }
+
+    public function init()
+    {
+        if (!in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+            add_action('admin_notices', array($this, 'woocommerce_not_active_notice'));
+            deactivate_plugins(plugin_basename(__FILE__));
+            return;
+        }
+
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_public_scripts'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_styles'));
@@ -22,6 +33,11 @@ class BN_Noon_Elite_Price_By_Quantity_For_Woocommerce_Plugin
         require_once plugin_dir_path(__FILE__) . 'admin/product_page_settings.php';
         require_once plugin_dir_path(__FILE__) . 'includes/product_pricing.php';
         require_once plugin_dir_path(__FILE__) . 'frontend/pricing_table.php';
+    }
+
+    public function woocommerce_not_active_notice()
+    {
+        echo '<div class="error"><p>' . __('Price by quantity for WooCommerce requires WooCommerce plugin to be running to work.', 'bn-noon-elite-price-by-quantity-for-woocommerce') . '</p></div>';
     }
 
     public function enqueue_admin_scripts($hook)
