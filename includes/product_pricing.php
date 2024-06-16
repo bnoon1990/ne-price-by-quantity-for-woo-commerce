@@ -1,10 +1,9 @@
 <?php
-function bn_swo_qp_adjust_price($cart) {
+function bn_swo_qp_adjust_price($cart)
+{
     if (is_admin() && !defined('DOING_AJAX')) {
         return;
     }
-
-    error_log('woocommerce_before_calculate_totals hook triggered');
 
     foreach ($cart->get_cart() as $cart_item_key => $cart_item) {
         $product = $cart_item['data'];
@@ -27,7 +26,7 @@ function bn_swo_qp_adjust_price($cart) {
             continue;
         }
 
-        usort($rules, function($a, $b) {
+        usort($rules, function ($a, $b) {
             return intval($b['quantity']) - intval($a['quantity']);
         });
 
