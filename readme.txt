@@ -45,8 +45,9 @@ Yes, that's exactly what the Noon Elite Price By Quantity For WooCommerce plugin
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory that contains the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
+1. The new tab on the edit product page inside the WooCommerce Product data section. Here you can add each price rule and quantity breakpoint by either percentage discount or fixed amount.
+2. This is a preview of how the price by quantity table appears on the single product page on your site
+3. The overall settings can be seen inside woo commerce settings in their own new tab 'Quantity Pricing'
 
 == Changelog ==
 
