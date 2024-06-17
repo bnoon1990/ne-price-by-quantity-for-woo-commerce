@@ -16,6 +16,15 @@
       "email": "Ben@Nooneliterecruitment.com"
     }
   ],
-  "minimum-stability": "stable",
-  "require": {}
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {
+    "phpcsstandards/phpcsutils": "^1.0",
+    "wp-coding-standards/wpcs": "^3.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
 }
