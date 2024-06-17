@@ -17,6 +17,11 @@ use Noonelite\NePriceByQuantityForWoocommerce\Admin\PluginSettings;
 use Noonelite\NePriceByQuantityForWoocommerce\Frontend\PricingTable;
 use Noonelite\NePriceByQuantityForWoocommerce\Includes\ProductPricing;
 
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 class BN_Noon_Elite_Price_By_Quantity_For_Woocommerce_Plugin
 {
     private $productPageSettings;
