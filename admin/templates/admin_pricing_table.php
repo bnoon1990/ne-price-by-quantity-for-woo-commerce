@@ -1,3 +1,9 @@
+<?php
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit;
+}
+?>
 <table class="widefat wc_input_table" id="bn_swo_qp_pricing_table">
     <thead>
         <tr>

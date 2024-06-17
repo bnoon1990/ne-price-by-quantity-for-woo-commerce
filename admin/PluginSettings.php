@@ -2,6 +2,11 @@
 
 namespace Noonelite\NePriceByQuantityForWoocommerce\Admin;
 
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 class PluginSettings
 {
     public function __construct()

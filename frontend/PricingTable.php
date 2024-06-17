@@ -2,6 +2,11 @@
 
 namespace Noonelite\NePriceByQuantityForWoocommerce\Frontend;
 
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 class PricingTable
 {
     public function __construct()

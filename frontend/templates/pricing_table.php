@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 $display_title = get_option('ne_quantity_pricing_display_title', 'no');
 $title = get_option('ne_quantity_pricing_title', __('Multibuy Discounts Available', 'ne_quantity_pricing'));
 ?>
