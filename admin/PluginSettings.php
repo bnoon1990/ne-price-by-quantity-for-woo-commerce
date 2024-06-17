@@ -60,28 +60,28 @@ class PluginSettings
                 'id' => 'ne_quantity_pricing_section_end'
             ),
             // Donation section
-            // 'donation_section' => array(
-            //     'name'     => __('Support This Plugin', 'ne_quantity_pricing'),
-            //     'type'     => 'title',
-            //     'desc'     => '',
-            //     'id'       => 'ne_quantity_pricing_donation_section'
-            // ),
-            // 'donation_text' => array(
-            //     'name' => '',
-            //     'type' => 'title',
-            //     'desc' => __('If you find this plugin helpful, please consider making a donation to support ongoing development.', 'ne_quantity_pricing'),
-            //     'id'   => 'ne_quantity_pricing_donation_text',
-            // ),
-            // 'donation_link' => array(
-            //     'name' => '',
-            //     'type' => 'title',
-            //     'desc' => '<a href="https://www.yourdonationlink.com" class="button button-primary" target="_blank">' . __('Donate', 'ne_quantity_pricing') . '</a>',
-            //     'id'   => 'ne_quantity_pricing_donation_link',
-            // ),
-            // 'donation_section_end' => array(
-            //     'type' => 'sectionend',
-            //     'id' => 'ne_quantity_pricing_donation_section_end'
-            // )
+            'donation_section' => array(
+                'name'     => __('Support This Plugin', 'ne_quantity_pricing'),
+                'type'     => 'title',
+                'desc'     => '',
+                'id'       => 'ne_quantity_pricing_donation_section'
+            ),
+            'donation_text' => array(
+                'name' => '',
+                'type' => 'title',
+                'desc' => __('If you find this plugin helpful, please consider making a donation to support ongoing development.', 'ne_quantity_pricing'),
+                'id'   => 'ne_quantity_pricing_donation_text',
+            ),
+            'donation_link' => array(
+                'name' => '',
+                'type' => 'title',
+                'desc' => '<a href="https://donate.stripe.com/14k9Ef5yB8FS4U08ww" class="button button-primary" target="_blank">' . __('Donate', 'ne_quantity_pricing') . '</a>',
+                'id'   => 'ne_quantity_pricing_donation_link',
+            ),
+            'donation_section_end' => array(
+                'type' => 'sectionend',
+                'id' => 'ne_quantity_pricing_donation_section_end'
+            )
         );
     }
 }

@@ -7,6 +7,7 @@ Stable tag: 1.0.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Donate link: https://donate.stripe.com/14k9Ef5yB8FS4U08ww
 
 This plugin enables variable pricing to be added for simple and variable products in WooCommerce. 
 
@@ -59,3 +60,9 @@ Yes, that's exactly what the Noon Elite Price By Quantity For WooCommerce plugin
 
 = 1.0.0 =
 First version.
+
+== Support and Donations ==
+
+If you find this plugin useful and would like to support its development, please consider making a donation. Your support is greatly appreciated!
+
+[Donate here](https://donate.stripe.com/14k9Ef5yB8FS4U08ww).
