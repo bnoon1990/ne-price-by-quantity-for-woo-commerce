@@ -5,34 +5,34 @@ const uglify = require("gulp-uglify");
 
 gulp.task("minify-css-admin", function () {
   return gulp
-    .src("styles/admin/**/*.css")
+    .src("src/styles/admin/**/*.css")
     .pipe(concat("admin.min.css"))
     .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("assets/css"));
 });
 
 gulp.task("minify-css-frontend", function () {
   return gulp
-    .src("styles/frontend/**/*.css")
+    .src("src/styles/frontend/**/*.css")
     .pipe(concat("frontend.min.css"))
     .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("assets/css"));
 });
 
 gulp.task("minify-js-admin", function () {
   return gulp
-    .src("scripts/admin/**/*.js")
+    .src("src/scripts/admin/**/*.js")
     .pipe(concat("admin.min.js"))
     .pipe(uglify())
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("assets/js"));
 });
 
 gulp.task("minify-js-frontend", function () {
   return gulp
-    .src("scripts/frontend/**/*.js")
+    .src("src/scripts/frontend/**/*.js")
     .pipe(concat("frontend.min.js"))
     .pipe(uglify())
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("assets/js"));
 });
 
 gulp.task("watch", function () {
@@ -50,5 +50,15 @@ gulp.task(
     "minify-js-admin",
     "minify-js-frontend",
     "watch"
+  )
+);
+
+gulp.task(
+  "build",
+  gulp.series(
+    "minify-css-admin",
+    "minify-css-frontend",
+    "minify-js-admin",
+    "minify-js-frontend"
   )
 );

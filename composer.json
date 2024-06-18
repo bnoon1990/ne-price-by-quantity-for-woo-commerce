@@ -5,9 +5,9 @@
   "license": "GPL-2.0-or-later",
   "autoload": {
     "psr-4": {
-      "Noonelite\\NePriceByQuantityForWoocommerce\\Admin\\": "admin/",
-      "Noonelite\\NePriceByQuantityForWoocommerce\\Frontend\\": "frontend/",
-      "Noonelite\\NePriceByQuantityForWoocommerce\\Includes\\": "includes/"
+      "Noonelite\\NePriceByQuantityForWoocommerce\\Admin\\": "src/admin/",
+      "Noonelite\\NePriceByQuantityForWoocommerce\\Frontend\\": "src/frontend/",
+      "Noonelite\\NePriceByQuantityForWoocommerce\\Includes\\": "src/includes/"
     }
   },
   "authors": [
