@@ -4,6 +4,7 @@
   "description": "Adds variable pricing by quantity with options for percentage or fixed amount discounts and displays a pricing table on the product page.",
   "main": "gulpfile.js",
   "scripts": {
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
