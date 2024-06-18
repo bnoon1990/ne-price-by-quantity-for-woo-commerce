@@ -44,7 +44,7 @@ class ProductPageSettings
     {
         if (isset($_POST['bn_swo_qp_pricing_rules'])) {
             $pricing_rules = $_POST['bn_swo_qp_pricing_rules'];
-            update_post_meta($post_id, '_bn_swo_qp_pricing_rules', json_encode($pricing_rules));
+            update_post_meta($post_id, '_bn_swo_qp_pricing_rules', wp_json_encode($pricing_rules));
         }
     }
 
@@ -54,7 +54,7 @@ class ProductPageSettings
             global $post;
             $pricing_rules = get_post_meta($post->ID, '_bn_swo_qp_pricing_rules', true);
             $pricing_rules = $pricing_rules ? json_decode($pricing_rules, true) : array();
-            echo '<script type="text/javascript">var bn_swo_pricing_rules = ' . json_encode($pricing_rules) . ';</script>';
+            echo '<script type="text/javascript">var bn_swo_pricing_rules = ' . wp_json_encode($pricing_rules) . ';</script>';
         }
     }
 }
