@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Price by quantity for WooCommerce - By Noon Elite
+ * Plugin Name: Price by quantity for WooCommerce
  * Description: Adds variable pricing by quantity with options for percentage or fixed amount discounts and displays a pricing table on the product page.
  * Version: 1.0.0
  * Author: Ben Noon ( Noon Elite )
