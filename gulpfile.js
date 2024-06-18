@@ -118,7 +118,7 @@ gulp.task("composer-autoload", function (cb) {
 });
 
 // Zip the build directory
-gulp.task("zip-plugin", function (done) {
+gulp.task("zip-plugin", (done) => {
   fs.readFile(
     "./ne-price-by-quantity-for-woocommerce.php",
     "utf8",
@@ -138,7 +138,8 @@ gulp.task("zip-plugin", function (done) {
       return gulp
         .src("./build/**/*")
         .pipe(zip("ne-price-by-quantity-for-woocommerce-" + version + ".zip"))
-        .pipe(gulp.dest("build"));
+        .pipe(gulp.dest("build"))
+        .on("end", done);
     }
   );
 });
