@@ -1,4 +1,4 @@
-=== Price By Quantity For WooCommerce ===
+=== Noon Elite Price By Quantity For WooCommerce ===
 Contributors: noonelite
 Tags: woocommerce, pricing, quantity
 Requires at least: 5.7
