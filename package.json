@@ -18,6 +18,7 @@
     "products"
   ],
   "author": "Ben Noon",
+  "type": "module",
   "license": "GPL-2.0-or-later",
   "bugs": {
     "url": "https://github.com/bnoon1990/ne-price-by-quantity-for-woo-commerce/issues"

@@ -1,10 +1,11 @@
-const gulp = require("gulp");
-const cleanCSS = require("gulp-clean-css");
-const concat = require("gulp-concat");
-const uglify = require("gulp-uglify");
-const clean = require("gulp-clean");
-const composer = require("gulp-composer");
-// const jsonEditor = require("gulp-json-editor");
+import gulp from "gulp";
+import cleanCSS from "gulp-clean-css";
+import concat from "gulp-concat";
+import uglify from "gulp-uglify";
+import clean from "gulp-clean";
+import composer from "gulp-composer";
+import zip from "gulp-zip";
+import fs from "fs";
 
 gulp.task("minify-css-admin", function () {
   return gulp
@@ -82,10 +83,6 @@ gulp.task("copy-files", function () {
       "src/**/*.html", // Include HTML files in src directory
       "readme.txt", // Include readme.txt file in root
       "LICENSE.txt", // Include LICENSE file in root
-      // "src/frontend/**/*.php", // Include PHP files in src/frontend directory
-      // "src/admin/**/*.php", // Include PHP files in src/admin directory
-      // "src/includes/**/*.php", // Include PHP files in src/includes directory
-      // "assets/**", // Include assets directory from root
       "!node_modules/**",
       "!vendor/**",
       "!build/**",
@@ -104,27 +101,6 @@ gulp.task("copy-screenshots", function () {
   return gulp.src("src/screenshots/**/*").pipe(gulp.dest("build/screenshots"));
 });
 
-// Update composer to new autoload locations
-// gulp.task("update-composer", function () {
-//   return gulp
-//     .src("./build/composer.json")
-//     .pipe(
-//       jsonEditor(function (json) {
-//         json.autoload["psr-4"][
-//           "Noonelite\\NePriceByQuantityForWoocommerce\\Admin\\"
-//         ] = "admin/";
-//         json.autoload["psr-4"][
-//           "Noonelite\\NePriceByQuantityForWoocommerce\\Frontend\\"
-//         ] = "frontend/";
-//         json.autoload["psr-4"][
-//           "Noonelite\\NePriceByQuantityForWoocommerce\\Includes\\"
-//         ] = "includes/";
-//         return json;
-//       })
-//     )
-//     .pipe(gulp.dest("./build"));
-// });
-
 // Copy the assets directory
 gulp.task("copy-assets", function () {
   return gulp.src("assets/**/*").pipe(gulp.dest("build/assets"));
@@ -142,13 +118,29 @@ gulp.task("composer-autoload", function (cb) {
 });
 
 // Zip the build directory
-gulp.task("zip-plugin", function () {
-  return import("gulp-zip").then(({ default: zip }) => {
-    return gulp
-      .src("build/**/*")
-      .pipe(zip("my-plugin.zip"))
-      .pipe(gulp.dest("."));
-  });
+gulp.task("zip-plugin", function (done) {
+  fs.readFile(
+    "./ne-price-by-quantity-for-woocommerce.php",
+    "utf8",
+    function (err, data) {
+      if (err) {
+        return done(err);
+      }
+
+      var versionMatch = data.match(/Version:\s*(.*)/);
+      if (!versionMatch) {
+        return done(new Error("Could not find version in plugin file"));
+      }
+
+      var version = versionMatch[1];
+      console.log("Creating zip for version " + version);
+
+      return gulp
+        .src("./build/**/*")
+        .pipe(zip("ne-price-by-quantity-for-woocommerce-" + version + ".zip"))
+        .pipe(gulp.dest("build"));
+    }
+  );
 });
 
 // Build task for production
@@ -163,9 +155,8 @@ gulp.task(
     "copy-files",
     "copy-assets",
     "copy-composer-files",
-    // "update-composer",
     "composer-autoload",
-    "copy-screenshots"
-    // "zip-plugin"
+    "copy-screenshots",
+    "zip-plugin"
   )
 );
