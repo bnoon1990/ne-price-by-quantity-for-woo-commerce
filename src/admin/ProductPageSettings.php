@@ -35,6 +35,10 @@ class ProductPageSettings
         echo '<div class="options_group">';
         $pricing_rules = get_post_meta($post->ID, '_bn_swo_qp_pricing_rules', true);
         $pricing_rules = $pricing_rules ? json_decode($pricing_rules, true) : array();
+
+        // Add nonce field
+        wp_nonce_field('save_bn_swo_qp_pricing_rules_nonce', 'bn_swo_qp_pricing_rules_nonce');
+
         include plugin_dir_path(__FILE__) . 'templates/admin_pricing_table.php';
         echo '</div>';
         echo '</div>';
@@ -42,9 +46,15 @@ class ProductPageSettings
 
     public function save_pricing_rules($post_id)
     {
-        if (isset($_POST['bn_swo_qp_pricing_rules'])) {
-            $pricing_rules = $_POST['bn_swo_qp_pricing_rules'];
-            update_post_meta($post_id, '_bn_swo_qp_pricing_rules', wp_json_encode($pricing_rules));
+        // Check if nonce is set and valid
+        if (isset($_POST['bn_swo_qp_pricing_rules_nonce']) && wp_verify_nonce($_POST['bn_swo_qp_pricing_rules_nonce'], 'save_bn_swo_qp_pricing_rules_nonce')) {
+            if (isset($_POST['bn_swo_qp_pricing_rules'])) {
+                $pricing_rules = $_POST['bn_swo_qp_pricing_rules'];
+                update_post_meta($post_id, '_bn_swo_qp_pricing_rules', wp_json_encode($pricing_rules));
+            }
+        } else {
+            // Log nonce verification failure
+            error_log('Nonce verification failed for save_bn_swo_qp_pricing_rules_nonce in ProductPageSettings class.');
         }
     }
 
