@@ -1,4 +1,4 @@
-=== Noon Elite Price By Quantity For WooCommerce ===
+=== Price By Quantity For WooCommerce ===
 Contributors: noonelite
 Tags: woocommerce, pricing, quantity
 Requires at least: 5.7
@@ -13,7 +13,7 @@ This plugin enables variable pricing to be added for simple and variable product
 
 == Description ==
 
-This plugin, Noon Elite Price By Quantity For WooCommerce, is designed to enhance your WooCommerce store by adding a new pricing model based on quantity. 
+This plugin, Price By Quantity For WooCommerce, made by Noon Elite, is designed to enhance your WooCommerce store by adding a new pricing model based on quantity. 
 
 With this plugin, you can set different prices for different quantities of a product. This is particularly useful for stores that sell products in bulk and want to offer discounts for larger quantities. 
 
